@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FaceTest</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="facebook_app_id">1605308073125066</string>
+    <string name="facebook_secret">d59841139017f8e475af0a0684937d81</string>
+
+</resources>
