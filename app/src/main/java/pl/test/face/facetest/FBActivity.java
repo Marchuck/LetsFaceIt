@@ -10,6 +10,7 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -204,6 +205,19 @@ public class FBActivity extends AppCompatActivity {
             // Internet Connection is not present
             buildNoInternetDialog(this).show();
         }
+
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        if (fab != null)
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Log.i(TAG, "onCreate: get basic info");
+                    ReactivePoster.create().rolex();
+                }
+            });
     }
 
     @Override
@@ -224,7 +238,6 @@ public class FBActivity extends AppCompatActivity {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
                 dialog.dismiss();
                 Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
                 startActivity(intent);

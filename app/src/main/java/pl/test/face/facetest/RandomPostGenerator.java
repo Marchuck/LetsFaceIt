@@ -10,18 +10,22 @@ public class RandomPostGenerator {
     public static String[] randomPosts= new String[]{
       "Sprzedam OPLA",
         "Kupię rolki",
-        "Wszystkiego najlepszego!",
-            "Rozdaję wejściówki",
-            "Dostałem piątkę!",
+        "Lubię to!",
+            "Zapraszam do kontaktu",
+            "Rozdaję wejściówki na koncert Popka",
+            "Dostałem darmowe doładowania sms!",
             "Pomoże ktoś?",
-            "Jadę za granicę"
+            "Jadę za granicę",
+            "Ktoś na rynek?",
+            ""
     }; public static String[] randomPostsDescriptions= new String[]{
       "rocznik 90",
         "naprawdę",
         "#takbylo",
             "świętuję",
             "dzis wieczorem",
-            "TAK","#potwierdzoneinfo"
+            "TAK","#potwierdzoneinfo",
+            "..."
     };
 
     private RandomPostGenerator(){}
