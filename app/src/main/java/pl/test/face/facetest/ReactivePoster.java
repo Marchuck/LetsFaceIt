@@ -2,7 +2,6 @@ package pl.test.face.facetest;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Range;
 
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
@@ -11,19 +10,14 @@ import com.facebook.HttpMethod;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-import pl.test.face.facetest.thirdPartyApis.Swapi;
-import pl.test.face.facetest.thirdPartyApis.SwapiCharacter;
+import pl.test.face.facetest.thirdPartyApis.swapi.SwapiCharacter;
 import pl.test.face.facetest.thirdPartyApis.swapi.SwapiClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import rx.Observable;
-import rx.Observer;
-import rx.Scheduler;
 import rx.Subscriber;
-import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 

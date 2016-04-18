@@ -2,13 +2,13 @@ package pl.test.face.facetest.thirdPartyApis.swapi;
 
 import android.util.Log;
 
-import pl.test.face.facetest.thirdPartyApis.Swapi;
-import pl.test.face.facetest.thirdPartyApis.SwapiCharacter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Observable;
+import rx.Subscriber;
 
 /**
  * @author Lukasz Marczak
@@ -43,6 +43,26 @@ public class SwapiClient {
                 Log.e(TAG, "onFailure: " + t.getMessage());
             }
         });
-
     }
+
+    public static Observable<SwapiCharacter> getSwapiCharacterById(final int id) {
+
+        return Observable.create(new Observable.OnSubscribe<SwapiCharacter>() {
+            @Override
+            public void call(final Subscriber<? super SwapiCharacter> subscriber) {
+                getSwapiClient().getCharacter(id).enqueue(new Callback<SwapiCharacter>() {
+                    @Override
+                    public void onResponse(Call<SwapiCharacter> call, Response<SwapiCharacter> response) {
+                        subscriber.onNext(response.body());
+                    }
+
+                    @Override
+                    public void onFailure(Call<SwapiCharacter> call, Throwable t) {
+                        subscriber.onError(t);
+                    }
+                });
+            }
+        });
+    }
+
 }

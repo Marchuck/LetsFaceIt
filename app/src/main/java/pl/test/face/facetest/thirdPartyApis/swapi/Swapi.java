@@ -1,4 +1,4 @@
-package pl.test.face.facetest.thirdPartyApis;
+package pl.test.face.facetest.thirdPartyApis.swapi;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
